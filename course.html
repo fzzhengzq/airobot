@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程详情 - RoboLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#0f172a',
+                        darker: '#020617'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-100 font-sans antialiased">
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboLearn</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="courses.html" class="text-gray-300 hover:text-primary transition">全部课程</a>
+                    <a href="index.html#paths" class="text-gray-300 hover:text-primary transition">学习路径</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-primary transition">我的学习</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white transition">登录</button>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition">免费注册</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Video Player -->
+                    <div class="bg-dark border border-gray-800 rounded-xl overflow-hidden mb-6">
+                        <div class="aspect-video bg-darker flex items-center justify-center relative group cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition z-10">
+                                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <span class="absolute bottom-4 left-4 text-sm text-gray-300 z-10">第 1 讲 · ROS2 环境搭建</span>
+                        </div>
+                    </div>
+
+                    <!-- Course Header -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">ROS2</span>
+                            <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded">入门</span>
+                        </div>
+                        <h1 class="text-3xl font-bold mb-4">ROS2 零基础入门：从安装到第一个节点</h1>
+                        <div class="flex items-center gap-6 text-sm text-gray-400">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <span>4.9</span>
+                            </div>
+                            <span>2,340 人学习</span>
+                            <span>12 课时</span>
+                            <span>总计 8.5 小时</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="border-b border-gray-800 mb-6">
+                        <div class="flex space-x-8">
+                            <button class="pb-4 border-b-2 border-primary text-white font-medium">课程大纲</button>
+                            <button class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition">课程介绍</button>
+                            <button class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition">讲师</button>
+                            <button class="pb-4 border-b-2 border-transparent text-gray-400 hover:text-white transition">评价</button>
+                        </div>
+                    </div>
+
+                    <!-- Syllabus -->
+                    <div class="space-y-3" id="syllabus">
+                        <div class="bg-dark border border-gray-800 rounded-lg overflow-hidden">
+                            <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-800/50 transition" onclick="toggleSection(this)">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-primary font-mono text-sm">01</span>
+                                    <span class="font-medium">ROS2 环境搭建与基础概念</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <span>3 课时</span>
+                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-800 px-4 py-2 space-y-2 hidden">
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>Ubuntu 22.04 与 ROS2 Humble 安装</span>
+                                    </div>
+                                    <span class="text-gray-500">25 分钟</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>工作空间与 Colcon 构建系统</span>
+                                    </div>
+                                    <span class="text-gray-500">32 分钟</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>ROS2 架构与 DDS 通信机制</span>
+                                    </div>
+                                    <span class="text-gray-500">28 分钟</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark border border-gray-800 rounded-lg overflow-hidden">
+                            <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-800/50 transition" onclick="toggleSection(this)">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-primary font-mono text-sm">02</span>
+                                    <span class="font-medium">话题、服务与动作</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <span>4 课时</span>
+                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-800 px-4 py-2 space-y-2 hidden">
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>发布者与订阅者节点编程</span>
+                                    </div>
+                                    <span class="text-gray-500">35 分钟</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>自定义消息类型</span>
+                                    </div>
+                                    <span class="text-gray-500">40 分钟</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark border border-gray-800 rounded-lg overflow-hidden">
+                            <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-800/50 transition" onclick="toggleSection(this)">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-primary font-mono text-sm">03</span>
+                                    <span class="font-medium">TurtleBot3 仿真项目</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <span>3 课时</span>
+                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-800 px-4 py-2 space-y-2 hidden">
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>Gazebo 仿真环境配置</span>
+                                    </div>
+                                    <span class="text-gray-500">30 分钟</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>键盘控制与里程计读取</span>
+                                    </div>
+                                    <span class="text-gray-500">38 分钟</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark border border-gray-800 rounded-lg overflow-hidden">
+                            <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-800/50 transition" onclick="toggleSection(this)">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-primary font-mono text-sm">04</span>
+                                    <span class="font-medium">Rviz2 可视化与调试</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-500">
+                                    <span>2 课时</span>
+                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-800 px-4 py-2 space-y-2 hidden">
+                                <div class="flex items-center justify-between py-2 text-sm">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        <span>Rviz2 基础与 TF 可视化</span>
+                                    </div>
+                                    <span class="text-gray-500">42 分钟</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-dark border border-gray-800 rounded-xl p-6 sticky top-24">
+                        <div class="text-3xl font-bold mb-2">¥199</div>
+                        <div class="text-sm text-gray-500 mb-6">一次性购买，永久访问</div>
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold transition mb-3">立即购买</button>
+                        <button class="w-full border border-gray-700 hover:border-gray-500 text-gray-300 py-3 rounded-lg transition mb-6">加入收藏</button>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                12 节高清视频课程
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                完整源码与课件下载
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                课程答疑社区
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                结业证书
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-800 mt-6 pt-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">张</div>
+                                <div>
+                                    <div class="font-medium">张明远</div>
+                                    <div class="text-sm text-gray-500">自动驾驶算法工程师</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
+            © 2025 RoboLearn. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(el) {
+            const content = el.nextElementSibling;
+            const arrow = el.querySelector('svg:last-child');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

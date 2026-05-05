@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboLearn - 机器人学习平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#0f172a',
+                        darker: '#020617'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboLearn</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="courses.html" class="text-gray-300 hover:text-primary transition">全部课程</a>
+                    <a href="#paths" class="text-gray-300 hover:text-primary transition">学习路径</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-primary transition">我的学习</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white transition">登录</button>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition">免费注册</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm mb-6">
+                        <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                        已有 12,000+ 学员加入
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        掌握机器人技术的<br>
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">最佳学习平台</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+                        从 ROS 基础到深度学习驱动的自主机器人，系统化的课程体系助你成为机器人工程师。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="courses.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-semibold transition text-center">
+                            开始学习
+                        </a>
+                        <a href="#paths" class="border border-gray-700 hover:border-gray-500 text-gray-300 px-8 py-4 rounded-xl text-lg transition text-center">
+                            查看学习路径
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6 text-sm text-gray-500">
+                        <div class="flex items-center"><svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>实战项目驱动</div>
+                        <div class="flex items-center"><svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>行业专家授课</div>
+                        <div class="flex items-center"><svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>认证证书</div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
+                    <div class="relative bg-dark border border-gray-800 rounded-2xl p-6 shadow-2xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span class="text-xs text-gray-500">ROS2 仿真环境</span>
+                        </div>
+                        <div class="bg-darker rounded-lg p-4 font-mono text-sm">
+                            <div class="text-gray-500">$ ros2 launch nav2_bringup tb3_simulation_launch.py</div>
+                            <div class="text-primary mt-2">[INFO] [launch]: All log files...</div>
+                            <div class="text-accent mt-1">[INFO] [robot_state_publisher]: got...</div>
+                            <div class="text-gray-400 mt-1">[INFO] [gazebo-1]: process started...</div>
+                            <div class="text-secondary mt-1">[INFO] [controller_server]: Created...</div>
+                            <div class="animate-pulse mt-2 text-primary">_</div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+                            <div class="bg-darker rounded p-2">
+                                <div class="text-primary font-bold text-lg">SLAM</div>
+                                <div class="text-gray-500">实时建图</div>
+                            </div>
+                            <div class="bg-darker rounded p-2">
+                                <div class="text-secondary font-bold text-lg">Nav2</div>
+                                <div class="text-gray-500">自主导航</div>
+                            </div>
+                            <div class="bg-darker rounded p-2">
+                                <div class="text-accent font-bold text-lg">CV</div>
+                                <div class="text-gray-500">视觉识别</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-20 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">核心技术领域</h2>
+                <p class="text-gray-400">覆盖现代机器人工程的完整技术栈</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group bg-dark border border-gray-800 rounded-xl p-6 hover:border-primary/50 transition cursor-pointer">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">ROS / ROS2</h3>
+                    <p class="text-gray-400 text-sm mb-4">机器人操作系统，从节点通信到分布式架构</p>
+                    <span class="text-primary text-sm">12 门课程 →</span>
+                </div>
+                <div class="group bg-dark border border-gray-800 rounded-xl p-6 hover:border-secondary/50 transition cursor-pointer">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-.806-.984A1 1 0 0121 5.618l-4.553-2.276A1 1 0 0115 3.118v11.264a1 1 0 01-.553.894L9 17m0 0V7m0 0l-6-3"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">SLAM 与导航</h3>
+                    <p class="text-gray-400 text-sm mb-4">即时定位与地图构建，路径规划算法</p>
+                    <span class="text-secondary text-sm">8 门课程 →</span>
+                </div>
+                <div class="group bg-dark border border-gray-800 rounded-xl p-6 hover:border-accent/50 transition cursor-pointer">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">计算机视觉</h3>
+                    <p class="text-gray-400 text-sm mb-4">OpenCV、目标检测、视觉伺服控制</p>
+                    <span class="text-accent text-sm">10 门课程 →</span>
+                </div>
+                <div class="group bg-dark border border-gray-800 rounded-xl p-6 hover:border-purple-500/50 transition cursor-pointer">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">强化学习</h3>
+                    <p class="text-gray-400 text-sm mb-4">策略优化、Sim-to-Real 迁移学习</p>
+                    <span class="text-purple-500 text-sm">6 门课程 →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section id="paths" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">系统化学习路径</h2>
+                <p class="text-gray-400">从零基础到专家，清晰的成长路线</p>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-darker border border-gray-800 rounded-xl p-6 hover:border-primary/30 transition">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">入门</span>
+                                <h3 class="text-xl font-semibold">机器人工程基础</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Linux 基础、Python 编程、ROS2 入门、基本运动学</p>
+                            <div class="flex items-center gap-4 text-sm text-gray-500">
+                                <span>6 门课程</span>
+                                <span>预计 3 个月</span>
+                                <span>已有 4,200 人学习</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-32 bg-gray-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <span class="text-sm text-gray-500">基础阶段</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-darker border border-gray-800 rounded-xl p-6 hover:border-secondary/30 transition">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded">进阶</span>
+                                <h3 class="text-xl font-semibold">自主导航与感知</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">SLAM 算法、传感器融合、路径规划、动态避障</p>
+                            <div class="flex items-center gap-4 text-sm text-gray-500">
+                                <span>8 门课程</span>
+                                <span>预计 4 个月</span>
+                                <span>已有 2,800 人学习</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-32 bg-gray-800 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <span class="text-sm text-gray-500">进阶阶段</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-darker border border-gray-800 rounded-xl p-6 hover:border-accent/30 transition">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-accent/10 text-accent text-xs px-2 py-1 rounded">高级</span>
+                                <h3 class="text-xl font-semibold">AI 驱动机器人</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">深度强化学习、端到端视觉导航、多机协同、Sim-to-Real</p>
+                            <div class="flex items-center gap-4 text-sm text-gray-500">
+                                <span>5 门课程</span>
+                                <span>预计 4 个月</span>
+                                <span>已有 1,500 人学习</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-32 bg-gray-800 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <span class="text-sm text-gray-500">高级阶段</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">热门课程</h2>
+                    <p class="text-gray-400">学员评价最高的精选课程</p>
+                </div>
+                <a href="courses.html" class="text-primary hover:text-primary/80 transition">查看全部 →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="popular-courses">
+                <!-- JS will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-12 text-center border border-primary/20">
+                <h2 class="text-3xl font-bold mb-4">准备好开始你的机器人之旅了吗？</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">加入全球 12,000+ 学员的行列，系统学习最前沿的机器人技术。注册即送 7 天高级会员试用。</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-xl font-semibold transition">免费注册</button>
+                    <button class="border border-gray-600 hover:border-gray-400 text-gray-300 px-8 py-3 rounded-xl transition">浏览课程</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold">RoboLearn</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">专注于机器人工程教育的在线平台，培养下一代机器人工程师。</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">课程</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition">ROS2 基础</a></li>
+                        <li><a href="#" class="hover:text-primary transition">SLAM 算法</a></li>
+                        <li><a href="#" class="hover:text-primary transition">计算机视觉</a></li>
+                        <li><a href="#" class="hover:text-primary transition">强化学习</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">资源</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition">博客</a></li>
+                        <li><a href="#" class="hover:text-primary transition">社区论坛</a></li>
+                        <li><a href="#" class="hover:text-primary transition">开源项目</a></li>
+                        <li><a href="#" class="hover:text-primary transition">文档中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">关于</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition">关于我们</a></li>
+                        <li><a href="#" class="hover:text-primary transition">联系我们</a></li>
+                        <li><a href="#" class="hover:text-primary transition">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-primary transition">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-600">
+                © 2025 RoboLearn. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

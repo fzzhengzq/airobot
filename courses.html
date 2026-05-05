@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部课程 - RoboLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#0f172a',
+                        darker: '#020617'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-100 font-sans antialiased">
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RoboLearn</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="courses.html" class="text-primary transition">全部课程</a>
+                    <a href="index.html#paths" class="text-gray-300 hover:text-primary transition">学习路径</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-primary transition">我的学习</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white transition">登录</button>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition">免费注册</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">全部课程</h1>
+                <p class="text-gray-400">共 36 门课程，覆盖机器人工程全技术栈</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-dark border border-gray-800 rounded-xl p-4 mb-8">
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex-1 min-w-[200px]">
+                        <input type="text" id="search-input" placeholder="搜索课程..." class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                    </div>
+                    <select id="category-filter" class="bg-darker border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                        <option value="">全部分类</option>
+                        <option value="ros">ROS / ROS2</option>
+                        <option value="slam">SLAM 与导航</option>
+                        <option value="vision">计算机视觉</option>
+                        <option value="rl">强化学习</option>
+                        <option value="manipulation">机械臂操控</option>
+                    </select>
+                    <select id="level-filter" class="bg-darker border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                        <option value="">全部难度</option>
+                        <option value="beginner">入门</option>
+                        <option value="intermediate">进阶</option>
+                        <option value="advanced">高级</option>
+                    </select>
+                    <select id="sort-filter" class="bg-darker border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                        <option value="popular">最受欢迎</option>
+                        <option value="newest">最新发布</option>
+                        <option value="rating">评分最高</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="course-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
+            © 2025 RoboLearn. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCourseGrid('course-grid');
+            setupFilters();
+        });
+    </script>
+</body>
+</html>
